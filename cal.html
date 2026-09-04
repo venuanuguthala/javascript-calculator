@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <div class="container d-flex justify-content-center mt-5">
+
+        <div class="card shadow p-3" style="width: 350px;">
+            <input type="text"
+                   id="val"
+                   class="form-control form-control-lg text-end mb-3"
+                   placeholder="0"
+                   readonly>
+            <div class="row g-3">
+
+                <div class="col-3">
+                    <button class="btn btn-danger w-100" onclick="AC()">AC</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-secondary w-100" onclick="bracket()">()</button>
+                </div>
+
+                <div class="col-3">
+                    <button class="btn btn-secondary w-100" onclick="percent()">%</button>
+                </div>
+
+                <div class="col-3">
+                    <button class="btn btn-warning w-100" onclick="divide()">/</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-light border w-100" onclick="seven()">7</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-light border w-100" onclick="eight()">8</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-light border w-100" onclick="nine()">9</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-warning w-100" onclick="multiply()">*</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-light border w-100" onclick="four()">4</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-light border w-100" onclick="five()">5</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-light border w-100" onclick="six()">6</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-warning w-100" onclick="subtract()">-</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-light border w-100" onclick="one()">1</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-light border w-100" onclick="two()">2</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-light border w-100" onclick="three()">3</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-warning w-100" onclick="add()">+</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-light border w-100" onclick="zero()">0</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-light border w-100" onclick="dot()">.</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-danger w-100" onclick="wrong()">C</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-success w-100" onclick="equal()">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const val = document.getElementById("val");
+        function AC(){
+            val.value="";
+        }
+
+        function bracket(){
+            val.value+="()";
+        }
+
+        function percent(){
+            val.value+="%";
+        }
+
+        function divide(){
+            val.value+="/";
+        }
+
+        function seven(){
+            val.value+="7";
+        }
+
+        function eight(){
+            val.value+="8";
+        }
+
+        function nine(){
+            val.value+="9";
+        }
+
+        function multiply(){
+            val.value+="*";
+        }
+
+        function four(){
+            val.value+="4";
+        }
+
+        function five(){
+            val.value+="5";
+        }
+
+        function six(){
+            val.value+="6";
+        }
+
+        function subtract(){
+            val.value+="-";
+        }
+
+        function one(){
+            val.value+="1";
+        }
+
+        function two(){
+            val.value+="2";
+        }
+
+        function three(){
+            val.value+="3";
+        }
+
+        function add(){
+            val.value+="+";
+        }
+
+        function zero(){
+            val.value+="0";
+        }
+
+        function dot(){
+            val.value+=".";
+        }
+
+        function wrong(){
+            val.value=val.value.slice(0,-1);
+        }
+        function equal(){
+            try {
+                val.value=eval(val.value);
+            }
+            catch {
+                val.value="Error";
+            }
+        }
+    </script>
+</body>
+</html>
